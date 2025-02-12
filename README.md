@@ -1,4 +1,4 @@
-🚀 ProxyToggle - macOS SOCKS Proxy & SSH Tunnel Toggle
+# 🚀 ProxyToggle - macOS SOCKS Proxy & SSH Tunnel Toggle
 
 A macOS menu bar app that allows you to easily toggle a SOCKS proxy and SSH tunnel on and off. Built with Python and Rumps, packaged into a .app using PyInstaller.
 
