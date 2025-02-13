@@ -2,7 +2,7 @@
 
 A macOS menu bar app that allows you to easily toggle a SOCKS proxy and SSH tunnel on and off. Built with Python and Rumps, packaged into a .app using PyInstaller.
 
-<p align="center"><img src="https://github.com/matthewshammond/ProxyToggle/blob/main/icon.png?raw=true" width="500" height="500"></p>
+<p align="center"><img src="https://github.com/matthewshammond/ProxyToggle/blob/main/icons/icon.png?raw=true" width="500" height="500"></p>
 
 ## 📌 Features
 
