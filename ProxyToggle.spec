@@ -5,7 +5,7 @@ a = Analysis(
     ['proxy_toggle.py'],
     pathex=[],
     binaries=[],
-    datas=[('ProxyToggle.icns', '.')],
+    datas=[('ProxyToggle_on.icns', '.'), ('ProxyToggle_off.icns', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

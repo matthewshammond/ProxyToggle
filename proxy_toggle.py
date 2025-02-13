@@ -1,5 +1,6 @@
 # pip install rumps pyinstaller
 # pyinstaller --noconsole --onefile --windowed --name=ProxyToggle --icon=ProxyToggle.icns --add-data "ProxyToggle.icns:." proxy_toggle.py
+# pyinstaller --noconsole --onefile --windowed --name=ProxyToggle --icon=ProxyToggle.icns --add-data "ProxyToggle_on.icns:." --add-data "ProxyToggle_off.icns:." proxy_toggle.py
 import rumps
 import subprocess
 import os
@@ -18,10 +19,14 @@ if not os.path.exists(plist_path):
 
 PID_FILE = os.path.expanduser("~/.proxy_tunnel.pid")
 
+# Define icon paths
+ICON_ON = "ProxyToggle_on.icns"
+ICON_OFF = "ProxyToggle_off.icns"
+
 
 class ProxyToggleApp(rumps.App):
     def __init__(self):
-        super(ProxyToggleApp, self).__init__("ProxyToggle", icon="ProxyToggle.icns")
+        super(ProxyToggleApp, self).__init__("ProxyToggle", icon=ICON_OFF)
         self.menu = [rumps.MenuItem("Toggle Proxy", callback=self.toggle_proxy)]
         self.proxy_on = False
 
@@ -56,6 +61,7 @@ class ProxyToggleApp(rumps.App):
             f.write(pid)
 
         self.proxy_on = True
+        self.icon = ICON_ON  # Change to "ON" icon
         rumps.notification("Proxy Status", "Active", "Proxy is now ON")
 
     def stop_proxy(self):
@@ -83,6 +89,7 @@ class ProxyToggleApp(rumps.App):
             os.remove(PID_FILE)
 
         self.proxy_on = False
+        self.icon = ICON_OFF  # Change to "OFF" icon
         rumps.notification("Proxy Status", "Inactive", "Proxy is now OFF")
 
 
